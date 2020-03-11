@@ -1,0 +1,4 @@
+displayName = Khaios Core
+author = FoolsLynx
+version = 1.0.0.0
+buildIgnore = build.txt, .gitattributes, .gitignore, .git/, .vs/, .idea/, bin/, obj/, Thumbs.db

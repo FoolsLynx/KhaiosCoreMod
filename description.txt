@@ -1,0 +1,95 @@
+Khaios Core is a mod which introduces aspects that make creating Adventure Maps easier. 
+
+The main aspect of the mod, is the Terminal. This works similar to Minecraft's command blocks.
+There are current 7 commands that have been added:
+- Weather (Gives the ability to set whether it is raining or not as well as sandstorms and slime rain)
+- Time (Allows you to adjust the time with set or add commands)
+- Item (Gives the ability to add or remove items from player inventories)
+- Say (Broadcasts a message to the world)
+- Kill (Allows you to kill any Player or NPC within a radius or all Player or NPCs in the world)
+- Event (Allows you to trigger the start of any of the default events. Goblin Invasion, Frost Moon, etc)
+- Summon (Allows you to summon an NPC based on their name or id to a relative position to the command tile)
+
+
+Terminal Syntax:
+
+There are a few ways to write a command. Please use this key to help understand what symbols are.
+|	- This means or. for example, each command has a long and short way. For example weather has weather or just w.
+[]	- These are optional. These will mostly be at the end of commands.
+""	- Anything inside quotations requires quotations around it. For example if getting an item, if you do "Iron Shortsword" it will correctly find it
+~	- This means relative. This is related to X and Y coords. So if a command says ~X then the number to enter will be relative to the x coord. For example, if the tile is at X: 2000 and the command is -20 the relative position would be 1980.
+()	- This means the command is a number. For example (Radius) you need to replace that with a number.
+
+Time Command:
+	t|time set (value)|day|night|midday|midnight
+	t|time add (value)
+
+	Examples:
+		t set midday
+		time add 1000
+
+Weather Command:
+	w|weather set|toggle clear|rain|storm|slime
+	w|weather clear
+
+	Examples:
+		weather set slime
+		w clear
+
+Item Command:
+	i|item give|take "name"|(id) [quantity]
+
+	Examples:
+		item give "iron shortsword"
+		item give 1 99
+
+		item take "iron shortsword"
+		item take 1 99
+
+Say Command:
+	s|say "message"
+
+	Examples:
+		s "Hello, World!"
+		say "Broadcast Message!"
+
+Kill Command
+	k|kill player|npc all|(radius)
+
+	Examples:
+		k npc all
+		kill player 16
+
+Event Command
+	e|event start bloodmoon|goblin|legion|solar|pirate|pumpkin|frost|martian
+
+	bloodmoon - Blood Moon
+	goblin - Goblin Invasion
+	legion - Frost Legion
+	solar - Solar Eclipse
+	pirate - Pirate Invasion
+	pumpkin - Pumpkin Moon
+	frost - Frost Moon
+	martian - Martian Invasion
+
+	Examples:
+		e start goblin
+		event start pumpkin
+
+
+Summon Command
+	su|summon (id)|"name" ~x ~y
+
+	Examples:
+		summon "blue slime" 0 -5
+		summon 93 10 5
+		su "red slime" 0 0
+
+For help, use the Help command and it will give you the name of a command which you can enter and get the syntax of.
+The help command can be:
+help|h|commands
+
+You can also use the "Commands" command in chat like so:
+/commands [command]
+
+Alone it will list all the commands you can use. By adding a command it will give you the syntax.
